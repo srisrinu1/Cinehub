@@ -14,7 +14,7 @@ function App() {
        <Container>
        Movie app
         <Switch>
-          <Route path="/" component={Trending}/>
+          <Route path="/" component={Trending} exact/>
           <Route path="/movies" component={Movies}/>
           <Route path="/series" component={Series}/>
           <Route path="/search" component={Search}/>
