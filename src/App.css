@@ -1,7 +1,7 @@
 .App {
     min-height: 100vh;
     color: black;
-    padding-top: 130px;
+    padding-top: 120px;
     padding-bottom: 70px;
 }
 
@@ -16,8 +16,8 @@
     border-radius: 50px;
 }
 
-@media (max-width:700px) {
-    .app {
-        padding-top: 70px;
+@media (max-width:768px) {
+    .App {
+        padding-top: 75px;
     }
 }
