@@ -2,12 +2,16 @@ import React,{useState} from 'react';
 import useFetch from './../../hooks/useFetch';
 import SingleContent from '../../components/SingleContent/SingleContent';
 import CustomPagination from '../../components/Pagination/CustomPagination';
+import Genres from '../../components/Genres/Genres';
 import '../Trending/Trending.css';
 
 const Movies = () => {
+  
   const [page,setPage]=useState(1);
   const [content,setContent]=useState([]);
   const [numOfPages,setNumOfPages]=useState();
+  const [genres,setGenres]=useState([]);
+  const [selectedGenres,setSelectedGenres]=useState();
   const moviesURL=`discover/movie`
   const {response}=useFetch(moviesURL,`language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`)
   if(response){
@@ -21,10 +25,19 @@ const Movies = () => {
     
     
   },0);
+  
+    
  
   
   return <div>
   <span className="pageTitle">Discover Movies</span>
+  <Genres type="movie" 
+    selectedGenres={selectedGenres}
+        setSelectedGenres={setSelectedGenres}
+        genres={genres}
+        setGenres={setGenres}
+        setPage={setPage}
+  />
   <div className="trending">
   {content && content.map((c)=>(
       <SingleContent 
