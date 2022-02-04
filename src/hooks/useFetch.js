@@ -1,17 +1,17 @@
 import React,{useState,useEffect,useCallback} from 'react';
 import http from "../Core/Axios";
 
-const useFetch = (url) => {
+const useFetch = (url,param) => {
     const [response,setResponse]=useState(null);
     const [error, setError] = useState(null);
 //   const [isLoading, setIsLoading] = React.useState(false);
     const apiKey= process.env.REACT_APP_API_KEY;
-useEffect(() => {
-   
+
+      const URL=url+`?api_key=${apiKey}&${param}`
         const fetchData = async () => {
             try {
-              const {data} = await http.get(url,{
-                  params:{api_key: apiKey}
+              const {data} = await http.get(URL,{
+                 
               });
               setResponse(data);
             
@@ -19,10 +19,19 @@ useEffect(() => {
               setError(error);
             }
           };
-          fetchData();
+        
+       
+   useEffect(()=>{
+      fetchData();
+   },[URL,apiKey])
+  // useEffect(useCallback(()=>{
+  //   fetchData();
+  // },[url,apiKey])
+  // ,[]);       
+       
         
    
-        },[url,apiKey]);
+   
   return {
       response,
   }
