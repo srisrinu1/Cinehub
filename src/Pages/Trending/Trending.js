@@ -4,14 +4,16 @@ import {env} from '../../config/AppConfig'
 import axios from 'axios';
 import http from '../../Core/Axios';
 import SingleContent from '../../components/SingleContent/SingleContent';
+import CustomPagination from '../../components/Pagination/CustomPagination';
+import './Trending.css'
 
 
 const Trending = () => {
-  const [page,setPage] =useState(2);
+  const [page,setPage] =useState(7);
    const [content,setContent] =useState([]);
    const trendingUrl=`trending/all/day`
   
-   const {response}=useFetch(trendingUrl,`page=${page}`);
+   const {response}=useFetch(trendingUrl,`page=${page}`,page);
    if(response){
      var results=response.results;
    }
@@ -46,9 +48,8 @@ const Trending = () => {
   return <div>
   <span className="pageTitle">Trending</span>
   <div className="trending">
-    {content && content.length}
-    <SingleContent/>
-  <ul>
+   
+  
      {content && content.map((c)=>(
       <SingleContent 
         key={c.id}
@@ -61,8 +62,9 @@ const Trending = () => {
       />
      )
      )}
-     </ul>
+   
   </div>
+  <CustomPagination setPage={setPage} numOfPages={10}/>
   </div>
 };
 

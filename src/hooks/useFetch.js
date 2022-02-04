@@ -1,7 +1,7 @@
 import React,{useState,useEffect,useCallback} from 'react';
 import http from "../Core/Axios";
 
-const useFetch = (url,param) => {
+const useFetch = (url,param,page) => {
     const [response,setResponse]=useState(null);
     const [error, setError] = useState(null);
 //   const [isLoading, setIsLoading] = React.useState(false);
@@ -23,7 +23,7 @@ const useFetch = (url,param) => {
        
    useEffect(()=>{
       fetchData();
-   },[URL,apiKey])
+   },[URL,apiKey,page])
   // useEffect(useCallback(()=>{
   //   fetchData();
   // },[url,apiKey])
