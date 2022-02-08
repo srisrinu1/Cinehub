@@ -31,8 +31,6 @@ useEffect(() => {
   },0);
 },[genreURL,page,results])
  
-    
-
  
   const Layout=<>
    
