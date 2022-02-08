@@ -4,6 +4,12 @@ import Pagination from '@material-ui/lab/Pagination';
 
 
 const CustomPagination = (props) => {
+    // setTimeout(()=>{
+    //     const handlePageChange=(page)=>{
+    //         props.setPage(page);
+    //         window.scroll(0,0);
+    //     }  
+    // },0);
     const handlePageChange=(page)=>{
         props.setPage(page);
         window.scroll(0,0);
