@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import {TextField,Button,Tab,Tabs} from '@material-ui/core';
 import SearchIcon from "@material-ui/icons/Search";
 import useFetch from '../../hooks/useFetch';
@@ -17,14 +17,24 @@ const Search = () => {
     var results=response.results;
     var pages=response.total_pages;
   }
-  useEffect(() => {
+  const fetchData=()=>{
+   
+   
     setTimeout(()=>{
       setContent(results);
       setNumOfPages(pages);
       
       
     },0);
-  },[type, page, results, pages]);
+  
+  }
+
+  useEffect(()=>{
+    window.scroll(0, 0);
+    fetchData();
+  },[type,page])
+ 
+ 
 
   console.log(content);
   console.log(numOfPages);
@@ -37,13 +47,14 @@ const Search = () => {
       className="searchBox"
       label="search"
       variant="filled"
-      onChange={(e) =>setSearchText(e.target.value)}
+     onChange={(event) =>setSearchText(event.target.value)}
+     onClick={fetchData}
     />
      <Button
            
             variant="contained"
             style={{ marginLeft: 10 }}
-          >
+          onClick={fetchData} >
             <SearchIcon fontSize="large" />
           </Button>
     
