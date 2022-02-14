@@ -6,7 +6,7 @@ import './SingleContent.css';
 
 
 const SingleContent = (props) => {
-    return ( <ContentModal className="media">
+    return ( <ContentModal className="media" media_type={props.media_type} id={props.id}>
       <Badge badgeContent={props.vote_average} color={props.vote_average?'primary':'secondary'}/>
     <img className="poster" src={props.poster?`${env.imageUrl}/${props.poster}`:env.unavailable} alt={props.title} />
     <b>{props.title}</b>

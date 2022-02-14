@@ -1,5 +1,6 @@
  export const env = {
      imageUrl: 'https://image.tmdb.org/t/p/w200',
+     imageUrl_500: 'https://image.tmdb.org/t/p/w500',
      baseImageUrl: 'https://image.tmdb.org/t/p/',
      tmdbUrl: 'https://api.themoviedb.org/3/',
      unavailable: "https://www.movienewz.com/img/films/poster-holder.jpg",
