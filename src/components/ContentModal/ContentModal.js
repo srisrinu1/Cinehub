@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     width: "90%",
     height: "80%",
-    backgroundColor: "#F0F0F0",
+    backgroundColor: "#fff",
     border: "1px solid #282c34",
     borderRadius: 10,
     color: "#1A1A40",
@@ -50,7 +50,7 @@ export default function ContentModal(props) {
     setTimeout(()=>{
       setContent(response);
     },0);
-    console.log(response);
+   
    
    }
   const fetchVideo = () => {
@@ -60,7 +60,7 @@ export default function ContentModal(props) {
      },0);
    
     
-     console.log(video);
+    
   }
  
   
@@ -128,7 +128,7 @@ export default function ContentModal(props) {
                   </span>
 
                   <div>
-                 <Carousel/>
+                  <Carousel id={props.id} media_type={props.media_type} />
                   </div>
 
                   <Button
