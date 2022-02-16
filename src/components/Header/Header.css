@@ -4,11 +4,14 @@
     position: fixed;
     display: flex;
     justify-content: center;
+    align-items: center;
     text-transform: uppercase;
     background-color: #F9F9F9;
     font-family: "Montserrat", sans-serif;
-    font-size: 5vw;
+    font-size: 2.5vw;
     font-weight: 600;
+    padding-top: 2px;
+    padding-left: 4px;
     padding-bottom: 15px;
     box-shadow: 0px 1px 5px white;
     color: black;
@@ -18,6 +21,6 @@
 @media (max-width: 768px) {
     .header {
         padding-top: 15px;
-        font-size: 6.4vw;
+        font-size: 6.2vw;
     }
 }
