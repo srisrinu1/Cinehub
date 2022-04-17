@@ -1,28 +1,18 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+
 
 import Routes from './Routes/Routes';
+import {BrowserRouter as Router,Route} from 'react-router-dom';
+import Login from './Pages/Login';
 
 function App() {
   return (
-  //   <Router>
-  //   <Header />
+    <Fragment>
 
-
-  //   <div className="App">
-  //     <Container>
-
-  //       <Switch>
-  //         <Route path="/" component={Trending} exact />
-  //         <Route path="/movies" component={Movies} />
-  //         <Route path="/series" component={Series} />
-  //         <Route path="/search" component={Search} />
-
-  //       </Switch>
-  //     </Container>
-  //   </div>
-  //   <SimpleBottomNavigation />
-  // </Router>
   <Routes/>
+
+
+  </Fragment>
   );
 }
 
