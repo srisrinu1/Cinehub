@@ -1,4 +1,4 @@
-# Cinehub
+<h1>Cinehub</h1> 
 
 Enjoy the latest movie & series trailers all at one place.
 
