@@ -69,15 +69,10 @@ function Routes() {
             <Search/>
           </PrivateRoute>
 
-
-
-
-          {/* {isUser && <SimpleBottomNavigation/>} */}
-
-          <Route path="*" exact>
+          <Route path="*">
             <Error/>
           </Route>
-          <SimpleBottomNavigation/>
+
 
 
 
